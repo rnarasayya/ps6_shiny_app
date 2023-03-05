@@ -9,7 +9,6 @@
 
 library(shiny)
 library(tidyverse)
-library(compare)
 
 data <- read_delim("./Checkouts_by_Title.csv")
 
@@ -73,15 +72,6 @@ server <- function(input, output) {
           labs(x = "Year", y = "Total Checkouts")
       }
     })
-    
-    #output$plotmessage <- renderText({
-      #inputdf <- data.frame(input$type)
-      #listdf <- data.frame(list("BOOK", "VIDEODISC", "EBOOK"))
-      #if(all(inputdf == listdf)) {
-        #df <- data %>% filter(MaterialType %in% input$type, CheckoutYear != 2023)
-      #}
-      #paste("Time period is 2005-2022. We have ", nrow(df), "rows in this subset.")
-    #})
     
     output$totals <- renderTable({
       if(input$time == "CheckoutMonth") {
