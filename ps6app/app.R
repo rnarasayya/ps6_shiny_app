@@ -22,7 +22,7 @@ ui <- fluidPage(
                p("Here are the first few rows of the dataset."),
                mainPanel(tableOutput("headData"))),
       tabPanel(
-        "Plots",
+        "Plots", p("This is a scatterplot of the three most popular types of media."),
         sidebarLayout(
           sidebarPanel(
             checkboxGroupInput("type",
@@ -36,7 +36,7 @@ ui <- fluidPage(
         )
       ),
       tabPanel(
-        "Tables",
+        "Tables", p("This table shows total checkouts either by month or year."),
         sidebarLayout(
           sidebarPanel(
             radioButtons("time",
